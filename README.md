@@ -6,13 +6,15 @@ Static site generated from AWS re:Invent 2025 session SEC327-S, presented by Nat
 
 ## Overview
 
-This site covers modern approaches to detection engineering at scale, including:
+A single-page static site providing resources and links from the AWS re:Invent 2025 session on Detection Engineering at Scale.
 
-- **Detection as Code (DaC)** - Applying SDLC principles to security detections
-- **Data Pipeline Optimization** - Using Vector for efficient log processing
-- **SIEM Optimization** - Cost-effective archiving and rehydration strategies
-- **Behavioral & Correlation Detection** - Reducing false positives
-- **Open Standards** - OCSF for unified security telemetry
+**Features:**
+- Single HTML file with inlined and minified CSS/JS
+- Datadog RUM instrumentation
+- Custom domain support (shrt.cloud)
+- Automatic GitHub Actions deployment
+- Downloadable presentation slides
+- Resource links organized by category
 
 ## Quick Start
 
@@ -69,7 +71,27 @@ make init        # Initialize new site (install + build)
 
 ## GitHub Pages Deployment
 
-This site is configured to deploy to GitHub Pages from the `docs/` directory:
+This site automatically deploys to GitHub Pages using GitHub Actions.
+
+### Setup
+
+1. **Configure GitHub Pages**
+   - Go to repository Settings → Pages
+   - Under "Source", select **GitHub Actions**
+
+2. **Set Custom Domain (Optional)**
+   - The site is configured for `shrt.cloud`
+   - In Settings → Pages → Custom domain, enter your domain
+   - Ensure your DNS has a CNAME record pointing to `<username>.github.io`
+
+3. **Deploy**
+   - Push to the `main` branch
+   - GitHub Actions will automatically build and deploy
+   - Monitor progress in the Actions tab
+
+### Manual Deployment
+
+If you prefer manual deployment:
 
 1. Build the site: `make build`
 2. Commit changes: `git add docs/ && git commit -m "Deploy site"`
@@ -80,20 +102,27 @@ This site is configured to deploy to GitHub Pages from the `docs/` directory:
 
 ```
 .
-├── src/                    # Source files
-│   ├── _layouts/          # Eleventy layouts
-│   ├── css/               # Stylesheets
-│   ├── index.md           # Homepage
-│   ├── detection-as-code/ # DaC content
-│   ├── data-pipeline/     # Data pipeline content
-│   ├── correlation/       # Correlation detection content
-│   ├── ocsf/              # OCSF content
-│   └── resources/         # Resources and links
+├── .github/
+│   └── workflows/
+│       └── deploy.yml     # GitHub Actions workflow
+├── src/
+│   ├── _layouts/
+│   │   └── single-page.njk # Single-page layout
+│   ├── css/
+│   │   └── style.css      # Datadog-themed styles
+│   ├── js/
+│   │   └── main.js        # Smooth scrolling & UI
+│   └── index.njk          # Homepage content
 ├── docs/                  # Built site (GitHub Pages)
-├── .eleventy.js          # Eleventy configuration
-├── package.json          # Node dependencies
-├── Makefile              # Build automation
-└── README.md             # This file
+│   ├── CNAME              # Custom domain config
+│   ├── index.html         # Single-page HTML with inlined CSS/JS
+│   └── slides.pdf         # Presentation slides
+├── CNAME                  # Custom domain (shrt.cloud)
+├── slides.pdf             # Source PDF
+├── .eleventy.js           # Eleventy configuration
+├── package.json           # Node dependencies
+├── Makefile               # Build automation
+└── README.md              # This file
 ```
 
 ## Datadog Color Scheme
