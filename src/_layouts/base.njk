@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Detection Engineering at Scale</title>
+  <meta name="description" content="{{ description or 'Building High-Fidelity Security Operations with Detection as Code' }}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Detection Engineering at Scale</h1>
+      <p>Building High-Fidelity Security Operations</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/detection-as-code/">Detection as Code</a></li>
+        <li><a href="/data-pipeline/">Data Pipeline</a></li>
+        <li><a href="/correlation/">Correlation & Behavioral Detection</a></li>
+        <li><a href="/ocsf/">OCSF</a></li>
+        <li><a href="/resources/">Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    {{ content | safe }}
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AWS re:Invent - SEC327-S</p>
+      <p>Presented by Nathan Pitchaikani (Riot Games) & Andrew Krug (Datadog)</p>
+      <p><a href="https://securitylabs.datadoghq.com" target="_blank">Datadog Security Labs</a> |
+         <a href="https://schema.ocsf.io/" target="_blank">OCSF Framework</a></p>
+    </div>
+  </footer>
+</body>
+</html>

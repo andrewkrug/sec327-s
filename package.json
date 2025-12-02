@@ -1,0 +1,17 @@
+{
+  "name": "detection-engineering-at-scale",
+  "version": "1.0.0",
+  "description": "Detection Engineering at Scale - Building High-Fidelity Security Operations",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "keywords": ["detection", "security", "datadog", "aws"],
+  "author": "Nathan Pitchaikani, Andrew Krug",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
