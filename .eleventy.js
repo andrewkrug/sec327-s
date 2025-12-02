@@ -32,6 +32,9 @@ module.exports = function(eleventyConfig) {
   // Copy PDF to output directory
   eleventyConfig.addPassthroughCopy("slides.pdf");
 
+  // Copy CNAME file for custom domain
+  eleventyConfig.addPassthroughCopy("CNAME");
+
   return {
     dir: {
       input: "src",
